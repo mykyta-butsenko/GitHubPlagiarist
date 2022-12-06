@@ -1,0 +1,20 @@
+{
+    "CustomerName": "Customer Name",
+    "ProjectName": "RandomProjectName",
+    "Reviewer": "Ivan Petrov",
+    "Keywords": [
+        "I_want_to_find_this_keyword_1", 
+        "I_want_to_find_this_keyword_2", 
+        "I_want_to_find_this_keyword_3"
+    ],
+    "Languages": [
+        "cpp",
+        "csharp",
+        "vb",
+        "js",
+        "java"
+    ],
+    "ApiToken": "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",
+    "ExceptionsListFileName": "RandomProjectName.exceptions.txt",
+    "AppendResultsToExceptionsFile": true
+}

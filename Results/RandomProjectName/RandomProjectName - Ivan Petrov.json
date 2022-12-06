@@ -1,0 +1,33 @@
+{
+    "FileUrl": "https://github.com/this_author_is_a_plagiarist/project_found_1/blob/bbaaa5c58146f2f48077d26503eb5701f0dc102a/ArduinoBLE/extras/arduino-ble-parser.py",
+    "TextMatches": [
+        {
+            "Fragment": "using System;\n namespace I_want_to_find_this_keyword_1"
+        }
+    ],
+    "Repository": {
+        "Url": "https://github.com/this_author_is_a_plagiarist/project_found_1"
+    }
+},
+{
+    "FileUrl": "https://github.com/this_author_is_a_plagiarist/project_found_2/blob/efc2f8e15a415eeb9c6861f42fabfad7e71a7d60/arduino/libraries/ArduinoBLE/extras/arduino-ble-parser.py",
+    "TextMatches": [
+        {
+            "Fragment": "using System;\n namespace I_want_to_find_this_keyword_2"
+        }
+    ],
+    "Repository": {
+        "Url": "https://github.com/this_author_is_a_plagiarist/project_found_2"
+    }
+},
+{
+    "FileUrl": "https://github.com/this_author_is_a_plagiarist/project_found_3/blob/5bb50d1a4549c67c408a06638167f940553aaeaa/exercise-1_image%20classifier/arduino%20libraries/ArduinoBLE/extras/arduino-ble-parser.py",
+    "TextMatches": [
+        {
+            "Fragment": "using System;\n namespace I_want_to_find_this_keyword_3"
+        }
+    ],
+    "Repository": {
+        "Url": "https://github.com/this_author_is_a_plagiarist/project_found_3"
+    }
+}
