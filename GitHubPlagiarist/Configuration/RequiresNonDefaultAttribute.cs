@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.Reflection;
-using GitHubSearch.Resources;
+using GitHubPlagiarist.Resources;
 
 namespace GitHubPlagiarist.Configuration
 {

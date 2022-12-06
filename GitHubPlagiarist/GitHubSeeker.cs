@@ -1,9 +1,11 @@
 ﻿using GitHubPlagiarist.Configuration;
 using GitHubPlagiarist.Interfaces;
 using GitHubPlagiarist.Models;
-using GitHubSearch.Resources;
+using GitHubPlagiarist.Resources;
 using Octokit;
 using Serilog;
+using System;
+using System.Threading;
 
 namespace GitHubPlagiarist
 {
@@ -142,50 +144,17 @@ namespace GitHubPlagiarist
                         await Task.Delay(timeSpan, cancellationToken);
                     }
                 }
-                //TODO! There may be need to refactor this exception.
-                catch (ForbiddenException ex)
-                {
-                    Log.Information(ex.Message);
-
-                    TimeSpan timeSpan = await GetRateLimitResetTimeSpan();
-                    Log.Information(
-                        string.Format(
-                            NonLocalizableStrings.RetryAfterSecondsFormat,
-                            timeSpan.Seconds));
-
-                    if (timeSpan.Seconds > 0)
-                    {
-                        await Task.Delay(timeSpan, cancellationToken);
-                    }
-                }
-                //TODO! There may be need to refactor this exception.
                 catch (OverflowException ex)
                 {
                     Log.Information(ex.Message);
+
                     Log.Information(
-                        "This exception has been probably thrown because of Octokit.Internal.SearchResult.TotalCount type limitations - " +
-                        "it has an Int type with the max value = 2,147,483,647, while the result number has a bigger value. " +
-                        $"Probably there are too many coincidences with the search keyword = {keyword}.");
+                        string.Format(
+                            NonLocalizableStrings.TooManyCoincidences,
+                            keyword));
 
                     searchCodeResult = new SearchCodeResult();
                 }
-                //TODO! There may be need to refactor this exception.
-                //catch (Exception ex)
-                //{
-                //    Log.Information(ex.Message);
-                //    Log.Information("The general exception has been thrown. Be careful with it!");
-
-                //    TimeSpan timeSpan = await GetRateLimitResetTimeSpan();
-                //    Log.Information(
-                //        string.Format(
-                //            NonLocalizableStrings.RetryAfterSecondsFormat,
-                //            timeSpan.Seconds));
-
-                //    if (timeSpan.Seconds > 0)
-                //    {
-                //        await Task.Delay(timeSpan, cancellationToken);
-                //    }
-                //}
             }
 
             return searchCodeResult;

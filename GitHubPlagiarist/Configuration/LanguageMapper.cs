@@ -1,5 +1,5 @@
 ﻿using GitHubPlagiarist.Exceptions;
-using GitHubSearch.Resources;
+using GitHubPlagiarist.Resources;
 using Octokit;
 
 namespace GitHubPlagiarist.Configuration
